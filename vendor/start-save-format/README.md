@@ -1,0 +1,202 @@
+# PokemonStart 0.62.0 save-format component
+
+**Permission clarification (2026-10-16).** Following an explicit explanation of
+modification, offline distribution and modified-source publication on GitHub/in
+ZIPs, the maintainer reported permission conditional on credit attribution, and
+confirmed that the developer is already credited. Retain the existing PokemonStart
+developer and project/tool credits in `licenses.html`; do not add an invented
+individual tool author. This records the maintainer confirmation, not a separately
+inspected rights-holder message. `component.json` records the scope and condition.
+
+Source distribution: [pm-start/PokemonStart](https://github.com/pm-start/PokemonStart),
+maintainer-supplied `セーブデータ移行ツール (1).html` alongside the 0.62.0 ROM.
+The 0.59.5 source adds X records, versioned sector obfuscation and integrity tags, retaining the 0.59.0 physical save-slot layout. Its decoded
+JavaScript was reviewed statically; the original HTML/UI is not distributed.
+This identifies the distributor, **not a verified individual author**. This is
+separate from the earlier くりーぱー START Save Migrate component; its author credit
+and permission must not be attributed to this different attachment.
+
+PokemonStart project development and contributions: **[onikoro334274-cell](https://github.com/onikoro334274-cell)** and **[liru55](https://github.com/liru55)**. Both accounts appear in the upstream contributor list (checked 2026-10-16); [the 0.50.1 publication commit](https://github.com/pm-start/PokemonStart/commit/62ebfdded673b10fa4450b94494166da8147d2bd) is by liru55. This project credit does not identify an individual author of the bundled converter or add a permission grant.
+
+On 2026-10-16 the project maintainer confirmed that incorporation, Web publication, modification, offline distribution and redistribution of modified source on GitHub and in source ZIPs are permitted with credit attribution. The maintainer also confirmed the developer is already credited. This records the maintainer report, not an independently inspected rights-holder message. Retain the existing PokemonStart developer and project credits and this provenance. No standardized upstream or general third-party license is asserted; do not attribute this separate tool to the earlier START Save Migrate author.
+The host facade AGPL notice does not relicense this component.
+
+Original HTML SHA-256:
+`f89e3e793e8b067e7c21ce4ee68c39715826eaa9423e4d00203ab2b4f8ddf7f2`.
+Statically decoded JavaScript SHA-256:
+`a0ecd00b053570745ad1e8395d5f3c48d4ab1445b73dd6cb2683fa9ad8a36429`.
+
+**Latest-revision confirmation (2026-10-29).** On 2026-10-29, after being explicitly asked about the latest tool's restrictive notice, the maintainer confirmed that the same credit-conditional permission also applies to this latest supplied revision. This is a maintainer-reported specific permission, not a general license for other users or independent inspection of author correspondence. The generic source notice is retained as provenance here; the maintainer explicitly confirmed that the earlier permission covers this incorporation. Existing credits remain unchanged.
+
+## Scope
+
+`engine.js` extracts and adapts SaveCrypt, forward **old/L/W/X/Y → L/W/X/Y/Z** conversion and the 0.59.0 physical slot relocation.
+The original tool's DOM, downloads, historical 14-sector migration, reverse
+conversion, value-rounding code and unrelated packaged files are not included.
+The existing historical migration component remains responsible for older game
+versions before this separate layout conversion. No ROM, game assets, patch or
+user save is bundled here. No network or storage API is used.
+
+The forward rules are those in the supplied tool: 58-byte boxed records become
+60-byte records, all 50 × 30 logical positions are remapped, and the high met-level
+flag moves into the new extension field. No forward rounding or invented
+species/item/move rule is added. Party records are preserved unchanged. The last
+saved-version variable is raised to `0x31ff` (0.49.255) only under the source
+tool's rule (nonzero and older); it is deliberately **not** stamped 0.50.0, so the
+game's initial update still runs. Existing L data is validated without rewriting.
+
+## PalmoEMU safeguards and intentional differences
+
+- Work on an owned copy. Accept 128KiB or 6MiB saves, with an optional 16-byte RTC
+  tail. The full save has two independent 3MiB slots. A short file can grow to 6MiB
+  if the new layout requires extension pages. Return new bytes; never persist or
+  overwrite the caller's original.
+- Distinguish a completely erased (`0xff`) unused slot from unreadable data.
+  Explicit slot selection preserves every byte in the other slot. Selecting all
+  skips only erased slots and rejects any unreadable populated slot.
+- Reject duplicate/missing main section IDs, bad checksums, mixed main counters,
+  a mismatching shelf-map counter, and ambiguous equal-counter main contents.
+  Select main banks and overflow pages with uint32 wrap-aware serial comparison;
+  reject a half-range counter difference rather than guessing.
+- Require the selected page zero. Validate every referenced shelf, extension and
+  overflow page, including physical ranges, unique physical assignments, logical
+  IDs, signatures and checksums. Explicit `0xff` no-page entries remain normal
+  empty pages. Never silently replace a broken referenced page with zeroes, as
+  the standalone tool does. An equal-counter overflow with differing data is
+  rejected instead of silently choosing one.
+- Retain the tool's owned layout ranges (sectors 0–31 and 40–85 in each converted
+  slot). Preserve other extension sectors (32–39 and 86–767) as original **raw
+  bytes**, including their encryption state; the tool's whole-file re-encoding
+  otherwise changes plaintext non-layout sectors. Unselected slots, existing L
+  slots and RTC bytes are not re-encoded.
+- Re-read converted output and verify all 1,500 boxed records, non-box main
+  section bytes, party bytes, region data, page-zero metadata and extension
+  metadata. The shelf pointer structure, vacated old box locations and the
+  explicitly transformed level/version fields are the defined layout changes.
+- Cancellation and progress callbacks are host-only controls. Errors have stable
+  codes; `src/start-save/format-l.js` supplies localized user messages.
+
+`containsFormatL` is an inexpensive header hint, including encrypted headers. It
+is not a checksum/integrity check and must never authorize conversion or applying
+a save by itself. `inspectFormatSave` performs the actual structural inspection.
+
+Synthetic and source-tool comparison tests establish structural preservation,
+not full gameplay compatibility. The original save must remain recoverable.
+When replacing this component, compare forward rules and constants against the
+new supplied tool, re-review each safeguard, update source and component hashes,
+and run both independent logical-record tests and the supplied-tool oracle.
+
+## 0.50.1: expanded-flash probe after conversion
+
+Adopt the supplied 0.50.1 forward writer's two additions: write the other main
+bank with the same payload and counter minus one when the counter is nonzero;
+and, only when physical sector 16 does not hold a mapped box page, write a
+page-zero backup there with counter `max(counter - 1, 0)`. This makes the low
+flash sectors used by the game's read-only alias probe distinguishable from
+unused extended flash. No box page, unselected slot, RTC tail or non-layout
+region is overwritten by the new rule.
+
+The format boundary remains 0.50.0 and the conversion guard remains `0x31ff`;
+the tool revision is not a new save format or a reason to stamp 0.50.1 early.
+Already valid L saves remain byte-identical, as in the supplied tool. To recreate
+an old 0.50.0 conversion with the new standalone writer, its original old-format
+input is needed; this component does not silently reconstruct existing L saves.
+
+The runtime-only, structure/capacity-gated correction in
+`src/core/mgba-compatibility.js` remains necessary for blank/new-game flash and
+earlier conversions. The supplied 0.50.1 ROM still contains the exact recognized
+probe. It is not removed based on a version number, and a future changed probe
+is not forced through the recognizer. No further runtime or save-byte workaround
+was added. These are separate protections: the writer corrects its output;
+the runtime correction applies only to the verified core's temporary ROM copy.
+
+Independent synthetic checks cover both slots, sparse/dense boxes, odd/even/zero
+and maximum counters, preservation of the real sector-16 box page, raw probe
+results and original/RTC bytes. Ten fixtures match the supplied 0.50.1 forward
+converter byte for byte. Original HTML, decoded source and actual ROM remain
+outside the distribution. This does not certify real gameplay or iPhone use.
+
+## 0.53: wide move records
+
+The previously reviewed supplied HTML supports W/SHL3 records (63 bytes), after old/SHEL (58)
+and L/SHL2 (60). Forward old → L → W conversion relocates each of four move
+high bits from extension bits 9–12 into four six-bit fields in a 24-bit tail;
+location, level and the other extension bits are retained. W uses 64 records per
+page, extension records from index 960, nine logical extension pages and physical
+extension sectors 40–57 / overflow sectors 58–87. All 50 boxes remain available.
+
+The host reads both the native version gate and structural loader evidence to
+select L or W. 0.50–0.52 use L with guard 0x31ff; 0.53 and structurally compatible
+later targets use W with guard 0x34ff. These guards deliberately leave first-run
+game migrations pending. Unknown layouts/bounds fail closed. No version/CRC
+whitelist replaces the structural checks. Existing W saves remain byte-identical;
+downgrading W to L and upstream's lossy rounding remain unavailable.
+
+The adapted reader continues to reject corrupt maps, checksums, ambiguous counters
+and overlapping allocations instead of substituting empty boxes. L writes retain
+the previously reviewed sectors through 85; W owns through 87. Unselected slots,
+RTC and non-layout bytes remain unchanged. Runtime ROM-probe correction is a
+separate structure/capacity-gated feature; the supplied 0.59.0 probe does not match
+and is not patched. Input HTML, ROM and real saves are never distributed.
+
+## 0.59.0 physical save layout
+
+The supplied HTML adds 16 MiB files and moves adventure 2 from 3 MiB to 8 MiB. PalmoEMU keeps W box records separate from this relocation, validates all occupied slots, checks complete sectors rather than only their first 16 bytes, refuses conflicting destinations/unknown markers, preserves unrelated bytes and the optional RTC trailer, and verifies the relocated bytes. Original saves are not overwritten. Layout 2 applies to verified W-format destination ROMs from 0.59.0 onward, not a single patch release. One-adventure saves need no relocation.
+
+Synchronous inspection borrows non-shared input without a full 16MiB copy. Slot decoding uses private buffers; shared input and every asynchronous conversion retain a defensive entry snapshot. Offset views and RTC are preserved.
+
+## 0.59.5 tool: X records from 0.59.2 and keyed sectors
+
+X/SHL4 stores 78 bytes per boxed record: the W prefix is retained exactly and a
+15-byte EV/IV extension is initialized to zero. All 1,500 positions per adventure
+remain present. X uses eight page-zero records, 52 records per page, 14 extension
+pages beginning at logical record 780, physical sectors 160–187, and overflow
+sectors 188–217. W egg-box blocks at sectors 88/89 are converted from version 1
+to 2 (30 records each), with their independent checksums verified. Corrupt egg
+blocks are rejected rather than silently skipped. Party records remain unchanged.
+
+The host uses native loader and menu control-flow evidence, including the X
+cache/old-layout flag and both version bounds. It does not identify X from a
+filename or a single magic word. The format boundary and output stamp are
+0.59.2/0x3b02, not the supplied tool's 0.59.5 revision. Existing X saves remain
+byte-identical, including new nonzero EV/IV bits. Reverse conversion is unavailable.
+
+The supplied six key rows (0.57.1 and 0.59.1–0.59.5), checksum-preserving uint32
+payload transform and 16-bit MAC tag are retained. New X output uses the source
+tool's 0.59.2 key; native later keys can be read. Unknown keys and failed checksum
+or MAC validation stop conversion. The adapter does not re-sign damaged input or
+clear existing tamper flags. This is game-format integrity, not a claim of strong
+cryptographic confidentiality. Keys are neither fetched nor guessed from ROMs.
+
+Only a rolling key pair is needed during sector transforms; there is no per-sector
+1,020-element key array. Inspection still uses two 3MiB private slot buffers, not
+a duplicate 16MiB save. Target X extension ranges must be erased before an older
+layout is moved there. Unrelated raw sectors, unselected adventures and RTC bytes
+remain intact. Historical L/W allocation and validation rules are unchanged.
+
+## 0.59.6: native egg checksums and repair
+
+The native W egg block checksum includes the two bytes up to the next four-byte
+boundary; 0.59.5's tool omitted them. Read both checksum variants, write the aligned
+X checksum, and verify all 120 egg records across both slots and both blocks.
+Already-X saves may still contain W egg blocks left by the earlier tool. Inspect
+and repair these even on an otherwise compatible update; only affected egg
+sectors change, preserving raw native encryption, EV/IV data, counters and RTC.
+Already-repaired X saves remain byte-identical. The source's active-egg SB1 marker
+is checked; this adaptation refuses unreadable active data instead of warning and
+producing a potentially unreadable save. A damaged recognized inactive block also
+fails closed. Unknown unrelated bytes remain untouched. The seventh supplied
+key (0.59.6) is recognized; unknown keys and bad MACs remain rejected.
+
+The original 0.59.5 source hashes remain in Git history. The current header hashes
+identify the supplied 0.59.6 HTML and statically decoded JavaScript. Direction
+old/L/W→L/W/X is unchanged; X→X only repairs stale eggs, with no reverse conversion
+or rounding. Original HTML and real saves remain outside the distribution.
+
+## 0.62.0: Y/Z, 100 boxes and current keys
+
+Y (0.59.6) keeps X/SHL4 78-byte records and party/daycare high-bit storage. Z (0.61.0) adds 50 boxes in 29 mapped pages, physical sectors 218–275, and 500 bytes of names/wallpapers. Forward conversion verifies 3000 records per adventure, retains all existing record bytes, and initializes only the newly introduced boxes. Native Z saves remain byte-identical unless stale eggs need repair. The 16 supplied sector keys through 0.62.0 are recognized.
+
+The host verifies the Z loader, map header/loop and native version limits, rather than whitelisting 0.62.0 or trusting a filename. Earlier verified X ROMs use the Y boundary from 0.59.6. Unknown loaders remain unsupported. Active party/daycare pool headers and checksums are validated; sectors 92/93 and owner fields are retained raw. Unreadable pages, invalid MACs, unknown keys and occupied new-box extents still reject conversion. No reverse conversion or lossy rounding is exposed.
+
+The engine runs only during inspection/conversion, in the existing Worker path. No ROM/core/gameplay loop changes are needed for this update. Private ROM/save/original HTML are not distributed.

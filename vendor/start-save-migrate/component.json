@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "hostContract": "start-v23-50-savecrypt",
+  "toolVersion": "1.0.9",
+  "outputVersion": "0.49.0",
+  "author": "くりーぱー (Discord: ajillo0112)",
+  "permission": "Author permission for incorporation into PalmoEMU, Web publication, modification, and redistribution of modified source was confirmed by the project maintainer on 2026-10-14. No standardized upstream license was supplied. Retain the provenance/scope in README.md; do not assert an AGPL, MIT or general third-party license. The maintainer confirmed that the author's stated condition is credit attribution.",
+  "sources": [
+    {
+      "name": "START-Save-Migrate.html",
+      "sha256": "6b3aece19d09e42dff7242924db19de0b654924b8b907de91a796d833d04e4e8"
+    },
+    {
+      "name": "user-supplied browser ZIP (reviewed 2026-10-13)",
+      "sha256": "b40f08152d94ba7197da3fd4b28295d8b41983b4347dfa51ab631112c27b9e6c"
+    },
+    {
+      "name": "user-supplied source ZIP (reviewed 2026-10-13)",
+      "sha256": "d231361de0613d4d6c57bcfc4d3c088b59d81fb2ca8498e292d6357c8bd1bd6b"
+    },
+    {
+      "name": "START-Save-Migrate-0.48.0.html (reviewed 2026-10-16)",
+      "sha256": "c75944e71e02566671ef5b04e19144e0733a32c526448558d48a7fa4b87e5cf2"
+    },
+    {
+      "name": "START-Save-Migrate-0.49.0.html (reviewed 2026-10-16)",
+      "sha256": "dffa63e76abf9f9bac865e24643139bd09f8ef3927a26a0dc37b5bf0be7df795"
+    }
+  ],
+  "files": {
+    "engine.js": "117e1d365a3a6db8b05d50a998c34b4c789fa4dead069facfeb3fd1b7ec1daa7",
+    "manifest.js": "f3052744667067733a3537ce90361fe16ef65c4eb7072f27f2f13ff629bd13b8",
+    "README.md": "950ede2e04046346804180e466317df3cd0638d0ef4c2c410d33480ea02e8124"
+  },
+  "localChanges": {
+    "template": "scripts/start-save-migrate/base/engine.template.txt",
+    "patches": "scripts/start-save-migrate/patches.json",
+    "generator": "scripts/start-save-migrate/build.mjs",
+    "note": "Reviewed extraction with separately maintained author-derived PalmoEMU corrections; not an unmodified upstream distribution."
+  },
+  "projectContributors": {
+    "accounts": [
+      "onikoro334274-cell",
+      "liru55"
+    ],
+    "role": "PokemonStart project development and contributions; not individual converter authorship",
+    "verifiedOn": "2026-10-16",
+    "contributorList": "https://api.github.com/repos/pm-start/PokemonStart/contributors",
+    "releaseCommit": "https://github.com/pm-start/PokemonStart/commit/62ebfdded673b10fa4450b94494166da8147d2bd"
+  }
+}

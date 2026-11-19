@@ -1,0 +1,1848 @@
+{
+  "id": "bundled:delta-gba",
+  "name": "Delta Style GBA",
+  "system": "gba",
+  "images": {
+    "a.png": "a.png",
+    "b.png": "b.png",
+    "bg_ipad_standard_landscape.png": "bg_ipad_standard_landscape.png",
+    "bg_ipad_standard_portrait.png": "bg_ipad_standard_portrait.png",
+    "bg_iphone_edgetoedge_landscape.png": "bg_iphone_edgetoedge_landscape.png",
+    "bg_iphone_edgetoedge_portrait.png": "bg_iphone_edgetoedge_portrait.png",
+    "bg_iphone_standard_landscape.png": "bg_iphone_standard_landscape.png",
+    "bg_iphone_standard_portrait.png": "bg_iphone_standard_portrait.png",
+    "dpad.png": "dpad.png",
+    "l.png": "l.png",
+    "menu.png": "menu.png",
+    "r.png": "r.png",
+    "select.png": "select.png",
+    "start.png": "start.png"
+  },
+  "variants": [
+    {
+      "device": "iphone",
+      "trait": "standard",
+      "orientation": "portrait",
+      "mappingSize": {
+        "width": 390,
+        "height": 763
+      },
+      "assets": {
+        "resizable": "bg_iphone_standard_portrait.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 22,
+            "y": 404,
+            "width": 156,
+            "height": 156
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 272,
+            "y": 400,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 180,
+            "y": 456,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 10,
+            "y": 300,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 260,
+            "y": 300,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 171,
+            "y": 596,
+            "width": 48,
+            "height": 48
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 94,
+            "y": 676,
+            "width": 78,
+            "height": 30
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 218,
+            "y": 676,
+            "width": 78,
+            "height": 30
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 15,
+            "y": 36,
+            "width": 360,
+            "height": 240
+          },
+          "filters": []
+        }
+      ]
+    },
+    {
+      "device": "iphone",
+      "trait": "standard",
+      "orientation": "landscape",
+      "mappingSize": {
+        "width": 844,
+        "height": 352
+      },
+      "assets": {
+        "resizable": "bg_iphone_standard_landscape.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 29,
+            "y": 102,
+            "width": 148,
+            "height": 148
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 730,
+            "y": 88,
+            "width": 84,
+            "height": 84
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 656,
+            "y": 196,
+            "width": 84,
+            "height": 84
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 10,
+            "y": 10,
+            "width": 120,
+            "height": 42
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 714,
+            "y": 10,
+            "width": 120,
+            "height": 42
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 407,
+            "y": 320,
+            "width": 30,
+            "height": 30
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 316,
+            "y": 322,
+            "width": 76,
+            "height": 24
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 452,
+            "y": 322,
+            "width": 76,
+            "height": 24
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 206,
+            "y": 28,
+            "width": 432,
+            "height": 288
+          },
+          "filters": []
+        }
+      ]
+    },
+    {
+      "device": "iphone",
+      "trait": "edgeToEdge",
+      "orientation": "portrait",
+      "mappingSize": {
+        "width": 390,
+        "height": 844
+      },
+      "assets": {
+        "resizable": "bg_iphone_edgetoedge_portrait.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 22,
+            "y": 442,
+            "width": 156,
+            "height": 156
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 272,
+            "y": 438,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 180,
+            "y": 494,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 10,
+            "y": 332,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 260,
+            "y": 332,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 171,
+            "y": 648,
+            "width": 48,
+            "height": 48
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 94,
+            "y": 732,
+            "width": 78,
+            "height": 30
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 218,
+            "y": 732,
+            "width": 78,
+            "height": 30
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 15,
+            "y": 64,
+            "width": 360,
+            "height": 240
+          },
+          "filters": []
+        }
+      ]
+    },
+    {
+      "device": "iphone",
+      "trait": "edgeToEdge",
+      "orientation": "landscape",
+      "mappingSize": {
+        "width": 844,
+        "height": 390
+      },
+      "assets": {
+        "resizable": "bg_iphone_edgetoedge_landscape.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 14,
+            "y": 120,
+            "width": 150,
+            "height": 150
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 742,
+            "y": 96,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 672,
+            "y": 208,
+            "width": 88,
+            "height": 88
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 10,
+            "y": 12,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 714,
+            "y": 12,
+            "width": 120,
+            "height": 46
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 405,
+            "y": 357,
+            "width": 32,
+            "height": 32
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 314,
+            "y": 359,
+            "width": 78,
+            "height": 24
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 452,
+            "y": 359,
+            "width": 78,
+            "height": 24
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 182,
+            "y": 35,
+            "width": 480,
+            "height": 320
+          },
+          "filters": []
+        }
+      ]
+    },
+    {
+      "device": "ipad",
+      "trait": "standard",
+      "orientation": "portrait",
+      "mappingSize": {
+        "width": 768,
+        "height": 1024
+      },
+      "assets": {
+        "resizable": "bg_ipad_standard_portrait.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 44,
+            "y": 664,
+            "width": 208,
+            "height": 208
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 536,
+            "y": 650,
+            "width": 124,
+            "height": 124
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 392,
+            "y": 724,
+            "width": 124,
+            "height": 124
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 24,
+            "y": 548,
+            "width": 180,
+            "height": 62
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 564,
+            "y": 548,
+            "width": 180,
+            "height": 62
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 360,
+            "y": 916,
+            "width": 48,
+            "height": 48
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 238,
+            "y": 928,
+            "width": 96,
+            "height": 36
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 434,
+            "y": 928,
+            "width": 96,
+            "height": 36
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 84,
+            "y": 96,
+            "width": 600,
+            "height": 400
+          },
+          "filters": []
+        }
+      ]
+    },
+    {
+      "device": "ipad",
+      "trait": "standard",
+      "orientation": "landscape",
+      "mappingSize": {
+        "width": 1024,
+        "height": 768
+      },
+      "assets": {
+        "resizable": "bg_ipad_standard_landscape.png"
+      },
+      "items": [
+        {
+          "inputs": {
+            "up": "up",
+            "down": "down",
+            "left": "left",
+            "right": "right"
+          },
+          "frame": {
+            "x": 40,
+            "y": 478,
+            "width": 208,
+            "height": 208
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 12,
+            "right": 12,
+            "bottom": 12,
+            "left": 12
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "dpad.png",
+            "selected": "dpad.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "a"
+          ],
+          "frame": {
+            "x": 836,
+            "y": 462,
+            "width": 124,
+            "height": 124
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "a.png",
+            "selected": "a.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "b"
+          ],
+          "frame": {
+            "x": 692,
+            "y": 536,
+            "width": 124,
+            "height": 124
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 8,
+            "right": 8,
+            "bottom": 8,
+            "left": 8
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "b.png",
+            "selected": "b.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "l"
+          ],
+          "frame": {
+            "x": 20,
+            "y": 24,
+            "width": 180,
+            "height": 62
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "l.png",
+            "selected": "l.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "r"
+          ],
+          "frame": {
+            "x": 824,
+            "y": 24,
+            "width": 180,
+            "height": 62
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "r.png",
+            "selected": "r.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "menu"
+          ],
+          "frame": {
+            "x": 488,
+            "y": 686,
+            "width": 48,
+            "height": 48
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "menu.png",
+            "selected": "menu.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "select"
+          ],
+          "frame": {
+            "x": 386,
+            "y": 692,
+            "width": 96,
+            "height": 36
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "select.png",
+            "selected": "select.png"
+          },
+          "selfRetracting": true
+        },
+        {
+          "inputs": [
+            "start"
+          ],
+          "frame": {
+            "x": 542,
+            "y": 692,
+            "width": 96,
+            "height": 36
+          },
+          "placement": "controller",
+          "extendedEdges": {
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          },
+          "touch": false,
+          "opacity": 1,
+          "asset": {
+            "normal": "start.png",
+            "selected": "start.png"
+          },
+          "selfRetracting": true
+        }
+      ],
+      "screens": [
+        {
+          "outputFrame": {
+            "x": 262,
+            "y": 104,
+            "width": 500,
+            "height": 333
+          },
+          "filters": []
+        }
+      ]
+    }
+  ],
+  "portrait": {
+    "device": "iphone",
+    "trait": "standard",
+    "orientation": "portrait",
+    "mappingSize": {
+      "width": 390,
+      "height": 763
+    },
+    "assets": {
+      "resizable": "bg_iphone_standard_portrait.png"
+    },
+    "items": [
+      {
+        "inputs": {
+          "up": "up",
+          "down": "down",
+          "left": "left",
+          "right": "right"
+        },
+        "frame": {
+          "x": 22,
+          "y": 404,
+          "width": 156,
+          "height": 156
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 12,
+          "right": 12,
+          "bottom": 12,
+          "left": 12
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "dpad.png",
+          "selected": "dpad.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "a"
+        ],
+        "frame": {
+          "x": 272,
+          "y": 400,
+          "width": 88,
+          "height": 88
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "a.png",
+          "selected": "a.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "b"
+        ],
+        "frame": {
+          "x": 180,
+          "y": 456,
+          "width": 88,
+          "height": 88
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "b.png",
+          "selected": "b.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "l"
+        ],
+        "frame": {
+          "x": 10,
+          "y": 300,
+          "width": 120,
+          "height": 46
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "l.png",
+          "selected": "l.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "r"
+        ],
+        "frame": {
+          "x": 260,
+          "y": 300,
+          "width": 120,
+          "height": 46
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "r.png",
+          "selected": "r.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "menu"
+        ],
+        "frame": {
+          "x": 171,
+          "y": 596,
+          "width": 48,
+          "height": 48
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "menu.png",
+          "selected": "menu.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "select"
+        ],
+        "frame": {
+          "x": 94,
+          "y": 676,
+          "width": 78,
+          "height": 30
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "select.png",
+          "selected": "select.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "start"
+        ],
+        "frame": {
+          "x": 218,
+          "y": 676,
+          "width": 78,
+          "height": 30
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "start.png",
+          "selected": "start.png"
+        },
+        "selfRetracting": true
+      }
+    ],
+    "screens": [
+      {
+        "outputFrame": {
+          "x": 15,
+          "y": 36,
+          "width": 360,
+          "height": 240
+        },
+        "filters": []
+      }
+    ]
+  },
+  "landscape": {
+    "device": "iphone",
+    "trait": "standard",
+    "orientation": "landscape",
+    "mappingSize": {
+      "width": 844,
+      "height": 352
+    },
+    "assets": {
+      "resizable": "bg_iphone_standard_landscape.png"
+    },
+    "items": [
+      {
+        "inputs": {
+          "up": "up",
+          "down": "down",
+          "left": "left",
+          "right": "right"
+        },
+        "frame": {
+          "x": 29,
+          "y": 102,
+          "width": 148,
+          "height": 148
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 12,
+          "right": 12,
+          "bottom": 12,
+          "left": 12
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "dpad.png",
+          "selected": "dpad.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "a"
+        ],
+        "frame": {
+          "x": 730,
+          "y": 88,
+          "width": 84,
+          "height": 84
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "a.png",
+          "selected": "a.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "b"
+        ],
+        "frame": {
+          "x": 656,
+          "y": 196,
+          "width": 84,
+          "height": 84
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "b.png",
+          "selected": "b.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "l"
+        ],
+        "frame": {
+          "x": 10,
+          "y": 10,
+          "width": 120,
+          "height": 42
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "l.png",
+          "selected": "l.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "r"
+        ],
+        "frame": {
+          "x": 714,
+          "y": 10,
+          "width": 120,
+          "height": 42
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "r.png",
+          "selected": "r.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "menu"
+        ],
+        "frame": {
+          "x": 407,
+          "y": 320,
+          "width": 30,
+          "height": 30
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "menu.png",
+          "selected": "menu.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "select"
+        ],
+        "frame": {
+          "x": 316,
+          "y": 322,
+          "width": 76,
+          "height": 24
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "select.png",
+          "selected": "select.png"
+        },
+        "selfRetracting": true
+      },
+      {
+        "inputs": [
+          "start"
+        ],
+        "frame": {
+          "x": 452,
+          "y": 322,
+          "width": 76,
+          "height": 24
+        },
+        "placement": "controller",
+        "extendedEdges": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "touch": false,
+        "opacity": 1,
+        "asset": {
+          "normal": "start.png",
+          "selected": "start.png"
+        },
+        "selfRetracting": true
+      }
+    ],
+    "screens": [
+      {
+        "outputFrame": {
+          "x": 206,
+          "y": 28,
+          "width": 432,
+          "height": 288
+        },
+        "filters": []
+      }
+    ]
+  },
+  "warnings": []
+}
